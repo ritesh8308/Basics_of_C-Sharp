@@ -1,11 +1,22 @@
-Console.Write("Enter your name: ");   // Write = no newline
-string name = Console.ReadLine();      // Reads user input as string
+using System;
 
-Console.WriteLine("Hello, " + name + "!");
+namespace Day_01
+{
+    class Getting_Input
+    {
+        static void Main(string[] args)
+        {
+                Console.Write("Enter your name: ");   // Write = no newline
+                string name = Console.ReadLine();      // Reads user input as string
 
-// Reading a number requires conversion
-Console.Write("Enter your age: ");
-string input = Console.ReadLine();
-int age = int.Parse(input);            // Convert string → int
+                Console.WriteLine("Hello, " + name + "!");
 
-Console.WriteLine("You are " + age + " years old.");
+                // Reading a number requires conversion
+                Console.Write("Enter your age: ");
+                string input = Console.ReadLine();
+                int age = int.Parse(input);            // Convert string → int
+
+                Console.WriteLine("You are " + age + " years old.");
+        }
+    }
+}
