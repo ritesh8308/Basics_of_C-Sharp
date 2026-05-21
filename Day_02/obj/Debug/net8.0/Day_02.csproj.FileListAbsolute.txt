@@ -1,0 +1,15 @@
+/home/rm_8995/projects/Basics_of_C#/Day_02/bin/Debug/net8.0/Day_02
+/home/rm_8995/projects/Basics_of_C#/Day_02/bin/Debug/net8.0/Day_02.deps.json
+/home/rm_8995/projects/Basics_of_C#/Day_02/bin/Debug/net8.0/Day_02.runtimeconfig.json
+/home/rm_8995/projects/Basics_of_C#/Day_02/bin/Debug/net8.0/Day_02.dll
+/home/rm_8995/projects/Basics_of_C#/Day_02/bin/Debug/net8.0/Day_02.pdb
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.GeneratedMSBuildEditorConfig.editorconfig
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.AssemblyInfoInputs.cache
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.AssemblyInfo.cs
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.csproj.CoreCompileInputs.cache
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.sourcelink.json
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.dll
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/refint/Day_02.dll
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.pdb
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/Day_02.genruntimeconfig.cache
+/home/rm_8995/projects/Basics_of_C#/Day_02/obj/Debug/net8.0/ref/Day_02.dll
