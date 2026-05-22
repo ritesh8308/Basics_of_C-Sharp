@@ -1,6 +1,6 @@
 # 🎯 C# Learning Journey — One Week Bootcamp
 
-> **Start Date:** 20-05-2026  
+> **Start Date:** 21-05-2026  
 > **Goal:** Learn C# from scratch in 7 days  
 > **Status:** 🟡 In Progress
 
@@ -22,14 +22,14 @@
 ```
 Day 1 ████████████████████ ✅
 Day 2 ████████████████████ ✅
-Day 3 ░░░░░░░░░░░░░░░░░░░░ ⏳
+Day 3 ████████████████████ ✅
 Day 4 ░░░░░░░░░░░░░░░░░░░░ ⏳
 Day 5 ░░░░░░░░░░░░░░░░░░░░ ⏳
 Day 6 ░░░░░░░░░░░░░░░░░░░░ ⏳
 Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 ```
 
-**[ 2 / 7 days completed ]**
+**[ 3 / 7 days completed ]**
 
 ---
 
@@ -146,38 +146,71 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 
 ---
 
-### ⏳ Day 3 — Methods, Arrays & Strings
-**Date:** ___________ | **Status:** 🔲 Pending
+### ✅ Day 3 — Methods, Arrays & Strings
+**Date:** 23-05-2026 | **Status:** ✅ Done
 
-#### Topics to Cover
-- [ ] Defining and calling methods
-- [ ] Parameters and return types
-- [ ] Method overloading
-- [ ] `out` and `ref` parameters
-- [ ] Optional parameters & named arguments
-- [ ] Single-dimension arrays
-- [ ] Multi-dimensional arrays
-- [ ] `foreach` loop
-- [ ] Common string methods (`Trim`, `Split`, `Join`, `Substring`, `IndexOf`, `Replace`)
-- [ ] `StringBuilder`
+#### Topics Covered
+- [x] Defining and calling methods
+- [x] Parameters and return types
+- [x] Method overloading
+- [x] `out` and `ref` parameters
+- [x] Optional parameters & named arguments
+- [x] Single-dimension arrays
+- [x] Multi-dimensional arrays
+- [x] `foreach` loop
+- [x] Common string methods (`Trim`, `Split`, `Join`, `Substring`, `IndexOf`, `Replace`)
+- [x] `StringBuilder`
 
-#### Exercises
-- [ ] Calculator with methods (add, subtract, multiply, divide)
-- [ ] Find max/min in an array without built-in methods
-- [ ] Word counter — count words in a sentence
-- [ ] Reverse a string
+#### Exercises Completed
+- [x] Exercise 1 — Calculator with Methods → 4.5/10 ⭐
+- [x] Exercise 2 — Find Max/Min in Array → 5.5/10 ⭐
+- [x] Exercise 3 — Word Counter (guided solution) → 📖 Learned
+- [x] Exercise 4 — Reverse String & Palindrome → 7/10 ⭐
+- **Day Average: 5.7/10**
 
 #### Notes & Key Learnings
 ```
-- 
-- 
-- 
+- void methods CANNOT return a value — return type and void are mutually exclusive
+- out and return are two roads to same destination — never mix them
+- out parameter = must be assigned before method exits (compiler enforces this)
+- return type method = use when returning ONE value — cleaner and simpler
+- out parameter = use when returning MULTIPLE values from one method
+- int.MinValue and int.MaxValue are PROPERTIES not methods — no () needed
+- Always use arr.Length not hardcoded numbers — works for any array size
+- Array index starts at 0 — last element is arr[arr.Length - 1]
+- s[i] accesses a single character at position i in a string
+- foreach (char c in string) loops through every character in a string
+- sentence.Split(' ') breaks sentence into string[] array by space separator
+- char comparison uses single quotes: c == 'a' not c == "a"
+- string.IsNullOrWhiteSpace() — always guard against empty input
+- StringComparison.OrdinalIgnoreCase — compare strings ignoring case
+- StringBuilder — use when building strings in loops (faster than + operator)
+- new StringBuilder() not new StringBuidler() — easy typo to make
+- Loop backwards for reverse: for (int i = s.Length - 1; i >= 0; i--)
+- Dictionary<string, int> for word frequency — key=word, value=count
+- Class names must be PascalCase with NO underscores — Max_Min_of_Array ❌ ArrayAnalyzer ✅
+- double.NaN — return this when division by zero, means "Not a Number"
+- string.Join(" - ", array) — joins array elements with separator
 ```
 
 #### Struggles / Questions
 ```
-- 
-- 
+- Mixed void + out + return in Calculator — void can't return a value!
+  (fix: use 'static double MethodName()' with return, drop out entirely)
+- double a = Console.ReadLine() — type mismatch, ReadLine returns string
+  (fix: always use double.TryParse like Day 1 & 2)
+- Math.int.minValue() — completely wrong syntax
+  (fix: int.MinValue — it's a property, no Math, no (), capital M and V)
+- Wrong TryParse syntax — missing 'int.' prefix and comma before 'out'
+  (fix: int.TryParse(Console.ReadLine(), out int a))
+- FindMin loop used i < 4 — missed the last element at index 4
+  (fix: always use i < arr.Length not a hardcoded number)
+- Copy-paste error: both output lines said "Max value" — missed Min label
+- StringBuilder typo: StringBuidler → StringBuilder
+- Word Counter — Split(' ') trick was the missing piece
+  (once Split was understood, rest of the exercise clicked immediately)
+- Char vs string comparison: c == "a" fails, must use c == 'a' single quotes
+- Gave up on Word Counter initially — broke it into steps and solved it
 ```
 
 ---
@@ -334,9 +367,9 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 
 | | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |-|-----|-----|-----|-----|-----|-----|-----|
-| Studied | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
-| Exercises done | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
-| Notes written | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ⬜ | ⬜ |
+| Studied | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
+| Exercises done | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
+| Notes written | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
 
 ---
 
@@ -348,6 +381,8 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 | 🔢 Type Master | Mastered all data types | ✅ |
 | 🛡️ Safe Parser | Used TryParse in all exercises | ✅ |
 | 🔁 Loop Hero | Completed all loop exercises | ✅ |
+| 🔧 Method Master | Wrote methods with return types | ✅ |
+| 🔤 String Wizard | Used Split, StringBuilder, Palindrome | ✅ |
 | 🧱 OOP Initiate | Built first class & object | ⬜ |
 | 🧬 Inheritor | Used inheritance successfully | ⬜ |
 | 🗂️ Collector | Used List & Dictionary | ⬜ |
@@ -370,17 +405,6 @@ if (!int.TryParse(Console.ReadLine(), out int age))
     return;
 }
 
-// Write vs WriteLine
-Console.Write("Enter name: ");       // cursor stays same line
-Console.WriteLine("Hello!");         // cursor moves to next line
-
-// ReadLine vs ReadKey
-string input = Console.ReadLine();    // reads full line (use always)
-ConsoleKeyInfo k = Console.ReadKey(); // reads single keypress instantly
-
-// Decimal division — always write 9.0 not 9 in formulas
-double F = (C * 9.0 / 5) + 32;
-
 // while(true) + break — infinite loop pattern (menus, game loops)
 int marks = 0;
 while (true)
@@ -389,35 +413,74 @@ while (true)
     if (!int.TryParse(Console.ReadLine(), out marks))
     {
         Console.WriteLine("Numbers only!");
-        continue;    // skip, ask again
-    }
-    if (marks < 0 || marks > 100)
-    {
-        Console.WriteLine("Must be 0-100!");
         continue;
     }
-    break;           // valid input — exit loop
+    if (marks < 0 || marks > 100) { Console.WriteLine("Must be 0-100!"); continue; }
+    break;
 }
 
-// Ternary operator — one line if/else
+// Ternary operator
 string result = marks >= 40 ? "Pass ✅" : "Fail ❌";
 
 // Column alignment in interpolation
-Console.WriteLine($"{a} x {i,2} = {a * i,3}");  // right-aligns numbers
+Console.WriteLine($"{a} x {i,2} = {a * i,3}");
 
-// do-while — runs at least once (password, menu)
-string password;
-do
+// Methods — return type (use for single value)
+static double Add(double a, double b) { return a + b; }
+static double Divide(double a, double b)
 {
-    Console.Write("Enter password: ");
-    password = Console.ReadLine();
-} while (password != "secret123");
+    if (b == 0) return double.NaN;
+    return a / b;
+}
 
-// FizzBuzz pattern — most specific condition FIRST
-if (i % 3 == 0 && i % 5 == 0) Console.WriteLine("FizzBuzz");
-else if (i % 3 == 0)           Console.WriteLine("Fizz");
-else if (i % 5 == 0)           Console.WriteLine("Buzz");
-else                           Console.WriteLine(i);
+// Methods — out parameter (use for multiple values)
+static void Divide(int a, int b, out int result, out int remainder)
+{
+    result = a / b;
+    remainder = a % b;
+}
+
+// int.MinValue / int.MaxValue — seed for FindMax / FindMin
+static int FindMax(int[] arr)
+{
+    int max = int.MinValue;        // not Math.int.minValue() !
+    foreach (int n in arr)
+        if (n > max) max = n;
+    return max;
+}
+
+// String reverse with StringBuilder
+static string Reverse(string s)
+{
+    StringBuilder sb = new StringBuilder();
+    for (int i = s.Length - 1; i >= 0; i--)
+        sb.Append(s[i]);
+    return sb.ToString();
+}
+
+// Palindrome check — ignore case
+bool isPalindrome = s.Equals(reversed, StringComparison.OrdinalIgnoreCase);
+
+// Split sentence into words
+string[] words = sentence.Trim().Split(' ');
+
+// Count vowels — char comparison uses single quotes
+int vowels = 0;
+string vowelList = "aeiouAEIOU";
+foreach (char c in sentence)
+    if (vowelList.Contains(c)) vowels++;
+
+// Word frequency using Dictionary
+Dictionary<string, int> freq = new Dictionary<string, int>();
+foreach (string word in words)
+{
+    string w = word.ToLower();
+    if (freq.ContainsKey(w)) freq[w]++;
+    else freq[w] = 1;
+}
+
+// Guard empty input
+if (string.IsNullOrWhiteSpace(sentence)) { Console.WriteLine("Empty!"); return; }
 
 // Null coalescing (Day 7)
 string result2 = name ?? "Unknown";
@@ -439,21 +502,25 @@ Things I found easy:
 - Basic program structure (namespace → class → Main) (Day 1)
 - FizzBuzz logic — got condition order right instinctively (Day 2)
 - for loop structure and counting (Day 2)
+- Palindrome logic — reverse loop and comparison (Day 3)
+- Array input loop structure (Day 3)
 
 Things I found hard:
-- Remembering to close all curly braces (especially namespace) (Day 1)
+- Remembering to close all curly braces especially namespace (Day 1)
 - Remembering $ before "" in interpolation (Day 1)
 - Setting up VS Code to run .cs files without a project (Day 1)
-- Overtype mode in VS Code Insert key issue (Day 1)
 - Variable scope — variables inside blocks die outside them (Day 2)
 - 'out int x' inside if = x scoped to that if block only (Day 2)
-- Remembering to update guess inside the loop (Day 2)
-- Moving prompt inside loop for retry UX (Day 2)
+- Mixing void + out + return in Calculator — took time to separate concepts (Day 3)
+- int.MinValue syntax — kept thinking it was Math.something (Day 3)
+- Word Counter — Split(' ') trick was completely unknown (Day 3)
+- char vs string comparison — single quotes vs double quotes (Day 3)
 
 What helped me the most:
 - Code reviews after each exercise — catching bugs early
-- TryParse pattern with 'return' for safe input handling
-- Elite-mode review on multiplication table — learned column alignment
+- Breaking problems into plain English steps before coding
+- Elite-mode reviews — push to write professional code
+- Step-by-step guided breakdown when completely stuck (Word Counter)
 
 What I want to explore after this week:
 - ASP.NET Core for web development
