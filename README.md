@@ -23,13 +23,13 @@
 Day 1 ████████████████████ ✅
 Day 2 ████████████████████ ✅
 Day 3 ████████████████████ ✅
-Day 4 ░░░░░░░░░░░░░░░░░░░░ ⏳
+Day 4 ████████████████████ ✅
 Day 5 ░░░░░░░░░░░░░░░░░░░░ ⏳
 Day 6 ░░░░░░░░░░░░░░░░░░░░ ⏳
 Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 ```
 
-**[ 3 / 7 days completed ]**
+**[ 4 / 7 days completed ]**
 
 ---
 
@@ -215,35 +215,76 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 
 ---
 
-### ⏳ Day 4 — OOP Part 1: Classes & Objects
-**Date:** ___________ | **Status:** 🔲 Pending
+### ✅ Day 4 — OOP Part 1: Classes & Objects
+**Date:** 24-05-2026 | **Status:** ✅ Done
 
-#### Topics to Cover
-- [ ] What is OOP? (4 pillars overview)
-- [ ] Defining a class
-- [ ] Fields and Properties (`get`, `set`, `auto-properties`)
-- [ ] Constructors (default, parameterized)
-- [ ] Creating objects (`new` keyword)
-- [ ] `this` keyword
-- [ ] Static vs instance members
-- [ ] Access modifiers (`public`, `private`, `protected`, `internal`)
+#### Topics Covered
+- [x] What is OOP? (4 pillars overview — Encapsulation, Inheritance, Polymorphism, Abstraction)
+- [x] Defining a class
+- [x] Fields and Properties (`get`, `set`, `auto-properties`)
+- [x] Constructors (default vs parameterized)
+- [x] Creating objects (`new` keyword)
+- [x] `this` keyword
+- [x] Static vs instance members
+- [x] Access modifiers (`public`, `private`, `protected`, `internal`)
 
-#### Exercises
-- [ ] Create a `BankAccount` class (deposit, withdraw, balance)
-- [ ] Create a `Student` class (name, grades, average)
-- [ ] Create a `Rectangle` class (area, perimeter methods)
+#### Exercises Completed
+- [x] Exercise 1 — BankAccount class (Deposit, Withdraw, Balance) → 6/10 ⭐
+- [x] Exercise 2 — Student class (Grades, Average, GradeLetter) → 6.5/10 ⭐
+- [x] Exercise 3 — Rectangle class (Area, Perimeter, IsSquare) → 9.5/10 ⭐
+- **Day Average: 7.3/10**
 
 #### Notes & Key Learnings
 ```
-- 
-- 
-- 
+- Class = blueprint, Object = instance created from the blueprint
+- Constructor name MUST match class name — enforced by compiler
+- File name SHOULD match class name — convention only (unlike Java)
+- Default constructor = no parameters, Parameterized = takes arguments
+- private fields — only the class itself can access them
+- public properties — controlled access from outside via get/set
+- Auto-property: public string Name { get; set; } — shorthand
+- private set: public int Count { get; private set; } — read from outside, set only inside
+- 'this' keyword = refers to current object instance
+- Static member = ONE copy shared across ALL objects — access via ClassName.Member
+- Instance member = each object has its OWN copy — access via object.Member
+- TotalTransactions++ in constructor = wrong — fires on creation not transaction
+- TotalTransactions should be instance not static — each account tracks its own
+- Withdraw should be void not double — no value to return
+- Class fields accessible to all methods — no need to pass them as parameters!
+- double.MinValue / double.MaxValue — same pattern as int.MinValue
+- == is comparison, = is assignment — High == g is a bug, High = g is correct
+- :F2 format specifier — shows exactly 2 decimal places
+- {"Label:",-12} — left-aligns label in 12-char field for neat output
+- Calculate expensive values once, store in variable, reuse — don't call twice
+- Ternary in interpolation: {(IsSquare() ? "Yes ✅" : "No ❌")}
+- Negative value rejection in constructor: Width = width < 0 ? 0 : width
+- static Compare(r1, r2) — utility method that doesn't belong to one object
+- Writing code yourself > asking for final code — Rectangle 9.5 proves it
 ```
 
 #### Struggles / Questions
 ```
-- 
-- 
+- TotalTransactions++ placed in constructor — fires on account creation not transaction
+  (fix: move TotalTransactions++ inside Deposit() and Withdraw())
+- Withdraw declared as double but returns nothing — compile error
+  (fix: use void — Withdraw doesn't need to return a value)
+- new BankAccount() — forgot to pass owner name to constructor
+  (fix: new BankAccount("Ritesh") — constructor requires the argument)
+- Console.WriteLine(PrintStatement()) — void method returns nothing to print
+  (fix: just call b1.PrintStatement() directly)
+- Missing semicolon after Deposit() call
+- TotalTransactions as static — all accounts shared one counter
+  (fix: instance variable — each account tracks its own transactions)
+- GetAverage(double[] Grades) — unnecessary parameter, class already has Grades
+  (fix: public double GetAverage() — use class field directly)
+- Grades.length → Grades.Length — capital L always
+- double.Min-Val → double.MinValue — hyphen is subtraction not part of name
+- High == g instead of High = g — comparison vs assignment (classic bug)
+- IsPassing(double GetAverage(Grades)) — invalid syntax for parameter
+  (fix: public bool IsPassing() — no parameter, call GetAverage() inside)
+- PrintReport() left empty with blank Console.WriteLines
+- Missing $ in string interpolation — "{Name}" instead of $"{Name}"
+- "Default Constructor" comment on parameterized constructor — misleading
 ```
 
 ---
@@ -367,9 +408,9 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 
 | | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |-|-----|-----|-----|-----|-----|-----|-----|
-| Studied | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
-| Exercises done | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
-| Notes written | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ⬜ |
+| Studied | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
+| Exercises done | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
+| Notes written | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
 
 ---
 
@@ -383,7 +424,7 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 | 🔁 Loop Hero | Completed all loop exercises | ✅ |
 | 🔧 Method Master | Wrote methods with return types | ✅ |
 | 🔤 String Wizard | Used Split, StringBuilder, Palindrome | ✅ |
-| 🧱 OOP Initiate | Built first class & object | ⬜ |
+| 🧱 OOP Initiate | Built first class & object | ✅ |
 | 🧬 Inheritor | Used inheritance successfully | ⬜ |
 | 🗂️ Collector | Used List & Dictionary | ⬜ |
 | ⚡ LINQ Ninja | Wrote 5+ LINQ queries | ⬜ |
@@ -397,7 +438,7 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 // String interpolation — ALWAYS use this over +
 string msg = $"Hello, {name}! You are {age} years old.";
 
-// Safe parse with early exit — Day 1 pattern
+// Safe parse with early exit
 Console.Write("Enter age: ");
 if (!int.TryParse(Console.ReadLine(), out int age))
 {
@@ -405,85 +446,89 @@ if (!int.TryParse(Console.ReadLine(), out int age))
     return;
 }
 
-// while(true) + break — infinite loop pattern (menus, game loops)
+// while(true) + break — infinite loop pattern
 int marks = 0;
 while (true)
 {
     Console.Write("Enter marks (0-100): ");
     if (!int.TryParse(Console.ReadLine(), out marks))
-    {
-        Console.WriteLine("Numbers only!");
-        continue;
-    }
-    if (marks < 0 || marks > 100) { Console.WriteLine("Must be 0-100!"); continue; }
+    { Console.WriteLine("Numbers only!"); continue; }
+    if (marks < 0 || marks > 100)
+    { Console.WriteLine("Must be 0-100!"); continue; }
     break;
 }
 
-// Ternary operator
-string result = marks >= 40 ? "Pass ✅" : "Fail ❌";
-
-// Column alignment in interpolation
-Console.WriteLine($"{a} x {i,2} = {a * i,3}");
-
-// Methods — return type (use for single value)
-static double Add(double a, double b) { return a + b; }
-static double Divide(double a, double b)
+// CLASS structure — Day 4 pattern
+class BankAccount
 {
-    if (b == 0) return double.NaN;
-    return a / b;
+    // Private field — no one outside touches this directly
+    private double balance;
+
+    // Public property — controlled access
+    public string Owner { get; set; }
+
+    // Instance counter — each object has its own
+    public int TotalTransactions { get; private set; }
+
+    // Static counter — shared across ALL objects
+    public static int TotalAccounts { get; private set; }
+
+    // Parameterized constructor
+    public BankAccount(string owner)
+    {
+        this.Owner   = owner;
+        this.balance = 0;
+        TotalAccounts++;   // static — increments for whole class
+    }
+
+    public void Deposit(double amt)
+    {
+        if (amt <= 0) { Console.WriteLine("Invalid!"); return; }
+        balance += amt;
+        TotalTransactions++;   // instance — only this account
+    }
+
+    public void Withdraw(double amt)
+    {
+        if (amt <= 0 || amt > balance)
+        { Console.WriteLine("Invalid!"); return; }
+        balance -= amt;
+        TotalTransactions++;
+    }
+
+    public double GetBalance() { return balance; }
+
+    public void PrintStatement()
+    {
+        Console.WriteLine($"{"Owner:",-15} {Owner}");
+        Console.WriteLine($"{"Balance:",-15} {balance:F2}");
+        Console.WriteLine($"{"Transactions:",-15} {TotalTransactions}");
+    }
 }
 
-// Methods — out parameter (use for multiple values)
-static void Divide(int a, int b, out int result, out int remainder)
-{
-    result = a / b;
-    remainder = a % b;
-}
+// Reject negatives in constructor — ternary
+Width  = width  < 0 ? 0 : width;
+Height = height < 0 ? 0 : height;
 
-// int.MinValue / int.MaxValue — seed for FindMax / FindMin
-static int FindMax(int[] arr)
-{
-    int max = int.MinValue;        // not Math.int.minValue() !
-    foreach (int n in arr)
-        if (n > max) max = n;
-    return max;
-}
+// Static method — belongs to class not object
+Rectangle.Compare(r1, r2);
 
-// String reverse with StringBuilder
-static string Reverse(string s)
-{
-    StringBuilder sb = new StringBuilder();
-    for (int i = s.Length - 1; i >= 0; i--)
-        sb.Append(s[i]);
-    return sb.ToString();
-}
+// :F2 format — always 2 decimal places
+Console.WriteLine($"Average: {GetAverage():F2}");
 
-// Palindrome check — ignore case
-bool isPalindrome = s.Equals(reversed, StringComparison.OrdinalIgnoreCase);
+// Label alignment — {label,-width}
+Console.WriteLine($"{"Name:",-12} {Name}");
+Console.WriteLine($"{"Balance:",-12} {balance:F2}");
 
-// Split sentence into words
-string[] words = sentence.Trim().Split(' ');
-
-// Count vowels — char comparison uses single quotes
-int vowels = 0;
-string vowelList = "aeiouAEIOU";
-foreach (char c in sentence)
-    if (vowelList.Contains(c)) vowels++;
-
-// Word frequency using Dictionary
-Dictionary<string, int> freq = new Dictionary<string, int>();
-foreach (string word in words)
-{
-    string w = word.ToLower();
-    if (freq.ContainsKey(w)) freq[w]++;
-    else freq[w] = 1;
-}
-
-// Guard empty input
-if (string.IsNullOrWhiteSpace(sentence)) { Console.WriteLine("Empty!"); return; }
+// Early return pattern — separate ifs with return
+if (avg >= 90) return "A";
+if (avg >= 75) return "B";
+if (avg >= 60) return "C";
+if (avg >= 40) return "D";
+return "F";
 
 // Null coalescing (Day 7)
-string result2 = name ?? "Unknown";
+string result = name ?? "Unknown";
 
 // LINQ basics (Day 7)
 var adults = people.Where(p => p.Age >= 18).ToList();
@@ -499,32 +544,39 @@ Week started on: 21-05-2026
 Things I found easy:
 - Understanding data types (Day 1)
 - String interpolation syntax (Day 1)
-- Basic program structure (namespace → class → Main) (Day 1)
+- Basic program structure namespace → class → Main (Day 1)
 - FizzBuzz logic — got condition order right instinctively (Day 2)
 - for loop structure and counting (Day 2)
 - Palindrome logic — reverse loop and comparison (Day 3)
 - Array input loop structure (Day 3)
+- Static vs Instance concept — answered quiz 4/4 correctly (Day 4)
+- Rectangle class — wrote cleanly with barely any bugs (Day 4)
+- Ternary operator for negative rejection in constructor (Day 4)
 
 Things I found hard:
 - Remembering to close all curly braces especially namespace (Day 1)
 - Remembering $ before "" in interpolation (Day 1)
 - Setting up VS Code to run .cs files without a project (Day 1)
 - Variable scope — variables inside blocks die outside them (Day 2)
-- 'out int x' inside if = x scoped to that if block only (Day 2)
-- Mixing void + out + return in Calculator — took time to separate concepts (Day 3)
+- Mixing void + out + return in Calculator (Day 3)
 - int.MinValue syntax — kept thinking it was Math.something (Day 3)
 - Word Counter — Split(' ') trick was completely unknown (Day 3)
-- char vs string comparison — single quotes vs double quotes (Day 3)
+- TotalTransactions placement — constructor vs methods (Day 4)
+- Withdraw returning double instead of void (Day 4)
+- Passing class fields as parameters when methods can see them directly (Day 4)
+- High == g vs High = g — comparison vs assignment (Day 4)
 
 What helped me the most:
 - Code reviews after each exercise — catching bugs early
 - Breaking problems into plain English steps before coding
 - Elite-mode reviews — push to write professional code
-- Step-by-step guided breakdown when completely stuck (Word Counter)
+- Step-by-step guided breakdown when completely stuck
+- Writing Rectangle myself instead of asking for final code → 9.5/10
 
 What I want to explore after this week:
 - ASP.NET Core for web development
 - Building desktop apps with .NET MAUI
+- GitHub portfolio of C# projects
 ```
 
 ---
