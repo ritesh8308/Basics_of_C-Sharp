@@ -50,8 +50,14 @@ class Student
         Console.WriteLine($"Average: {GetAverage():F2}");
         Console.WriteLine($"Grade:   {GetGradeLetter()}");
     }
+
+
+
+    public static void Main() 
+    {
+    Student s = new Student("Ritesh", 22, new double[] { 85, 92, 78, 95, 88 });
+    s.PrintReport();
+    }
 }
 
-// In Main
-Student s = new Student("Ritesh", 22, new double[] { 85, 92, 78, 95, 88 });
-s.PrintReport();
+
