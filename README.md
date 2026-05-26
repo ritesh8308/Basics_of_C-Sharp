@@ -24,12 +24,12 @@ Day 1 ████████████████████ ✅
 Day 2 ████████████████████ ✅
 Day 3 ████████████████████ ✅
 Day 4 ████████████████████ ✅
-Day 5 ░░░░░░░░░░░░░░░░░░░░ ⏳
+Day 5 ████████████████████ ✅
 Day 6 ░░░░░░░░░░░░░░░░░░░░ ⏳
 Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 ```
 
-**[ 4 / 7 days completed ]**
+**[ 5 / 7 days completed ]**
 
 ---
 
@@ -289,34 +289,74 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 
 ---
 
-### ⏳ Day 5 — OOP Part 2: Inheritance & Interfaces
-**Date:** ___________ | **Status:** 🔲 Pending
+### ✅ Day 5 — OOP Part 2: Inheritance & Interfaces
+**Date:** 25-05-2026 | **Status:** ✅ Done
 
-#### Topics to Cover
-- [ ] Inheritance (`:` syntax)
-- [ ] `base` keyword
-- [ ] Method overriding (`virtual` / `override`)
-- [ ] Abstract classes and methods
-- [ ] Interfaces (`interface`, `IComparable`, `IEnumerable`)
-- [ ] Polymorphism
-- [ ] Sealed classes
+#### Topics Covered
+- [x] Inheritance (`:` syntax)
+- [x] `base` keyword — calling parent constructor
+- [x] Method overriding (`virtual` / `override`)
+- [x] Abstract classes and abstract methods
+- [x] Interfaces — contract vs implementation
+- [x] Field vs Property in interfaces
+- [x] Polymorphism — same method, different behavior
+- [x] `IComparable<T>` — sorting with CompareTo()
+- [x] Pattern matching — `if (a is Dog dog)`
+- [x] Sealed classes
+- [x] `GetType().Name` — gets class name at runtime
 
-#### Exercises
-- [ ] Animal hierarchy — `Animal` → `Dog`, `Cat`, `Bird`
-- [ ] Shape hierarchy — `Shape` → `Circle`, `Rectangle`, `Triangle`
-- [ ] Implement `IComparable` on a `Product` class
+#### Exercises Completed
+- [x] Exercise 1 — Animal Hierarchy (Dog, Cat, Bird) → 6.5/10 ⭐
+- [x] Exercise 2 — Shape Hierarchy (Circle, Rectangle, Triangle) → 6/10 ⭐
+- [x] Exercise 3 — Product Interface + IComparable → 📖 Guided
+- **Day Average: 6.3/10**
 
 #### Notes & Key Learnings
 ```
-- 
-- 
-- 
+- Inheritance syntax: class Dog : Animal  (colon = inherits from)
+- base() = calls parent constructor — always needed when parent has params
+- virtual = parent says "child CAN override me"
+- override = child says "I AM replacing parent's version"
+- abstract method = NO body in parent — child MUST implement it
+- abstract class = cannot create object directly — only used as base
+- new Shape() → compile error — abstract class can never be instantiated
+- Interface = pure contract — no implementation, no fields, no constructor
+- Interface CAN have property signatures — string Name { get; } is a property not a field
+- Field vs Property: string name; = field ❌ | string Name { get; } = property ✅
+- A class can inherit ONE parent but implement MULTIPLE interfaces
+- IComparable<T> = built-in interface for sorting — implement CompareTo()
+- CompareTo() returns: negative = comes first, 0 = equal, positive = comes last
+- Array.Sort(array) uses CompareTo() automatically after implementing IComparable
+- Polymorphism = Animal[] holds Dog, Cat, Bird — a.Speak() calls correct version
+- Pattern matching: if (a is Dog dog) — checks type AND creates variable in one line
+- GetType().Name — returns "Circle", "Rectangle" etc. at runtime — very elegant!
+- Class members are PRIVATE by default — always write public explicitly
+- static methods CANNOT access instance members like Name, Age
+- Heron's formula: s = (a+b+c)/2, area = Math.Sqrt(s*(s-a)*(s-b)*(s-c))
+- ** is Python syntax — C# uses Math.Sqrt() and Math.Pow()
+- base.Speak() inside override = calls parent version first, then adds more
+- Sealed class = no further inheritance allowed
 ```
 
 #### Struggles / Questions
 ```
-- 
-- 
+- Name and Age missing public in Animal → child classes couldn't see them
+  (fix: always explicitly write public on properties in base class)
+- Fetch(), Purr(), Fly() declared static → can't access instance member Name
+  (fix: instance methods not static — static belongs to class not object)
+- Cat → Fetch() instead of Purr(), Bird → Fetch() instead of Fly() — copy-paste
+- new bird() lowercase → compile error (Bird not bird)
+- Rectangle constructor typo: Reactanlge + base(string color) wrong syntax
+  (fix: base(color) — just pass value, never the type keyword)
+- Triangle typo: Traingle — misspelled class and constructor name
+- A = A self-assignment in Triangle constructor — property assigned to itself
+  (fix: A = a — uppercase property, lowercase parameter)
+- s calculated as class field → always 0 because A,B,C not set yet
+  (fix: calculate s INSIDE GetArea() method after values are assigned)
+- ** operator doesn't exist in C# → use Math.Sqrt() for Heron's formula
+- Triangle missing GetPerimeter() entirely → abstract method not implemented
+- Comment left as code in Main → syntax error
+- Interface concept for IComparable — needed guided walkthrough
 ```
 
 ---
@@ -408,9 +448,9 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 
 | | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |-|-----|-----|-----|-----|-----|-----|-----|
-| Studied | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
-| Exercises done | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
-| Notes written | ⬜ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
+| Studied | ✅ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
+| Exercises done | ✅ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
+| Notes written | ✅ | ⬜ | ⬜ | ✅ | ✅ | ✅ | ✅ |
 
 ---
 
@@ -425,7 +465,7 @@ Day 7 ░░░░░░░░░░░░░░░░░░░░ ⏳
 | 🔧 Method Master | Wrote methods with return types | ✅ |
 | 🔤 String Wizard | Used Split, StringBuilder, Palindrome | ✅ |
 | 🧱 OOP Initiate | Built first class & object | ✅ |
-| 🧬 Inheritor | Used inheritance successfully | ⬜ |
+| 🧬 Inheritor | Used inheritance successfully | ✅ |
 | 🗂️ Collector | Used List & Dictionary | ⬜ |
 | ⚡ LINQ Ninja | Wrote 5+ LINQ queries | ⬜ |
 | 🚀 Week Complete | Finished the mini project | ⬜ |
@@ -527,6 +567,114 @@ if (avg >= 60) return "C";
 if (avg >= 40) return "D";
 return "F";
 
+// INHERITANCE — Day 5 patterns
+abstract class Animal
+{
+    public string Name { get; set; }   // public — child classes can see it!
+    public int Age  { get; set; }
+
+    public Animal(string name, int age)
+    {
+        Name = name;
+        Age  = age;
+    }
+
+    public abstract void Speak();      // child MUST implement
+
+    public virtual void Describe()     // child CAN override
+    {
+        Console.WriteLine($"{"Name:",-10} {Name}");
+        Console.WriteLine($"{"Age:",-10} {Age} yrs");
+    }
+}
+
+class Dog : Animal
+{
+    public Dog(string name, int age) : base(name, age) { }
+
+    public override void Speak() =>
+        Console.WriteLine($"{Name} says: Woof! 🐕");
+
+    public void Fetch() =>             // instance method — NOT static!
+        Console.WriteLine($"{Name}: fetching the ball!");
+}
+
+// ABSTRACT CLASS with expression body methods
+abstract class Shape
+{
+    public string Color { get; set; }
+    public Shape(string color) { Color = color; }
+    public abstract double GetArea();
+    public abstract double GetPerimeter();
+    public void PrintInfo()
+    {
+        Console.WriteLine($"{"Shape:",-12} {GetType().Name}"); // runtime name!
+        Console.WriteLine($"{"Color:",-12} {Color}");
+        Console.WriteLine($"{"Area:",-12} {GetArea():F2}");
+        Console.WriteLine($"{"Perimeter:",-12} {GetPerimeter():F2}");
+    }
+}
+
+class Circle : Shape
+{
+    public double Radius { get; set; }
+    public Circle(double radius, string color) : base(color) { Radius = radius; }
+    public override double GetArea()      => Math.PI * Radius * Radius;
+    public override double GetPerimeter() => 2 * Math.PI * Radius;
+}
+
+class Triangle : Shape
+{
+    public double A { get; set; }
+    public double B { get; set; }
+    public double C { get; set; }
+    public Triangle(double a, double b, double c, string color) : base(color)
+    { A = a; B = b; C = c; }           // lowercase param → uppercase property
+    public override double GetArea()
+    {
+        double s = (A + B + C) / 2;    // s inside method — not as field!
+        return Math.Sqrt(s * (s-A) * (s-B) * (s-C));  // Heron's formula
+    }
+    public override double GetPerimeter() => A + B + C;
+}
+
+// INTERFACE — contract only, no implementation
+interface IProduct
+{
+    string GetDescription();
+    double GetPrice();
+}
+
+// Implementing multiple contracts
+class Product : IProduct, IComparable<Product>
+{
+    public string Name     { get; set; }
+    public double Price    { get; set; }
+    public string Category { get; set; }
+
+    public Product(string name, double price, string category)
+    { Name = name; Price = price; Category = category; }
+
+    public string GetDescription() => $"{Name} ({Category})";
+    public double GetPrice()       => Price;
+
+    public int CompareTo(Product other) =>
+        this.Price.CompareTo(other.Price);  // enables Array.Sort()
+}
+
+// POLYMORPHISM — array of base type, calls correct version
+Animal[] animals = { new Dog("Bruno", 3), new Cat("Sinee", 1) };
+foreach (Animal a in animals)
+    a.Speak();    // calls Dog.Speak() or Cat.Speak() automatically
+
+// PATTERN MATCHING — check type and create variable in one line
+if (a is Dog dog)   dog.Fetch();
+if (a is Cat cat)   cat.Purr();
+if (a is Bird bird) bird.Fly();
+
+// Array.Sort using IComparable
+Array.Sort(products);   // sorts by CompareTo() automatically
+
 // Null coalescing (Day 7)
 string result = name ?? "Unknown";
 
@@ -552,6 +700,10 @@ Things I found easy:
 - Static vs Instance concept — answered quiz 4/4 correctly (Day 4)
 - Rectangle class — wrote cleanly with barely any bugs (Day 4)
 - Ternary operator for negative rejection in constructor (Day 4)
+- Polymorphism array — correct structure instinctively (Day 5)
+- base() constructor calls — used correctly throughout (Day 5)
+- Abstract class structure — right thinking from start (Day 5)
+- GetType().Name — found elegant solution independently (Day 5)
 
 Things I found hard:
 - Remembering to close all curly braces especially namespace (Day 1)
@@ -562,9 +714,13 @@ Things I found hard:
 - int.MinValue syntax — kept thinking it was Math.something (Day 3)
 - Word Counter — Split(' ') trick was completely unknown (Day 3)
 - TotalTransactions placement — constructor vs methods (Day 4)
-- Withdraw returning double instead of void (Day 4)
-- Passing class fields as parameters when methods can see them directly (Day 4)
 - High == g vs High = g — comparison vs assignment (Day 4)
+- public missing on base class properties — child classes invisible (Day 5)
+- static methods on instance data — Fetch/Purr/Fly were wrongly static (Day 5)
+- A = A self-assignment — uppercase param same as property name (Day 5)
+- s as class field instead of local variable in GetArea() (Day 5)
+- ** Python syntax used instead of Math.Sqrt() (Day 5)
+- IComparable concept — needed full walkthrough to understand (Day 5)
 
 What helped me the most:
 - Code reviews after each exercise — catching bugs early
@@ -572,6 +728,7 @@ What helped me the most:
 - Elite-mode reviews — push to write professional code
 - Step-by-step guided breakdown when completely stuck
 - Writing Rectangle myself instead of asking for final code → 9.5/10
+- Quiz-style questions on static vs instance — locked in the concept
 
 What I want to explore after this week:
 - ASP.NET Core for web development
