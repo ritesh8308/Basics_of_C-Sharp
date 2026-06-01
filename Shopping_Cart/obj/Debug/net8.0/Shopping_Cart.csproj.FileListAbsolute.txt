@@ -1,0 +1,15 @@
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/bin/Debug/net8.0/Shopping_Cart
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/bin/Debug/net8.0/Shopping_Cart.deps.json
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/bin/Debug/net8.0/Shopping_Cart.runtimeconfig.json
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/bin/Debug/net8.0/Shopping_Cart.dll
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/bin/Debug/net8.0/Shopping_Cart.pdb
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.GeneratedMSBuildEditorConfig.editorconfig
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.AssemblyInfoInputs.cache
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.AssemblyInfo.cs
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.csproj.CoreCompileInputs.cache
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.sourcelink.json
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.dll
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/refint/Shopping_Cart.dll
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.pdb
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/Shopping_Cart.genruntimeconfig.cache
+/home/rm_8995/projects/Basics_of_C#/Shopping_Cart/obj/Debug/net8.0/ref/Shopping_Cart.dll
