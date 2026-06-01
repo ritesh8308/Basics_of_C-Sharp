@@ -903,7 +903,33 @@ What I want to explore after this week:
 | Day 7 | LINQ & Mini Project | 9.0/10 |
 | **Overall** | **Full Week** | **7.5/10** |
 
-**From zero to building a Shopping Cart + Enterprise Payroll System in 7 days.** 🚀
+---
+
+## 🛒 Capstone Project — Shopping Cart
+
+A complete multi-file console application demonstrating the entire week's curriculum:
+
+```
+Shopping_Cart/
+├── src/
+│   ├── Product.cs    → model class (Day 4)
+│   ├── CartItem.cs   → calculated property (Day 4)
+│   ├── Cart.cs       → List<T> + LINQ (Day 6, 7)
+│   └── Receipt.cs    → StringBuilder + File I/O + try/catch (Day 3, 6)
+├── Program.cs        → menu loop + switch + discount logic (Day 2, 6)
+└── receipt.txt       → generated output
+```
+
+**Concepts used from every single day:**
+- Day 1 — string interpolation, TryParse, :F2 formatting
+- Day 2 — while(true) + break menu, switch, ternary
+- Day 3 — methods, StringBuilder
+- Day 4 — classes, properties, calculated property, static methods
+- Day 5 — (ToString override, encapsulation)
+- Day 6 — List, Dictionary, try/catch, File.WriteAllText
+- Day 7 — LINQ (Where, Sum, FirstOrDefault, Distinct), null coalescing
+
+**From zero to building a Shopping Cart + an Enterprise Payroll System in 7 days.** 🚀
 
 ---
 
