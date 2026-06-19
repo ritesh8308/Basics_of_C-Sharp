@@ -46,9 +46,10 @@ namespace Shopping_Cart
                 Console.WriteLine("2 → Add product to cart");
                 Console.WriteLine("3 → View cart");
                 Console.WriteLine("4 → Remove item from cart");
-                Console.WriteLine("5 → Apply discount code");
-                Console.WriteLine("6 → Checkout");
-                Console.WriteLine("7 → Exit");
+                Console.WriteLine("5 → Update item quantity");      // NEW
+                Console.WriteLine("6 → Apply discount code");
+                Console.WriteLine("7 → Checkout");
+                Console.WriteLine("8 → Exit");
                 Console.WriteLine("═══════════════════════════════════");
                 Console.Write("Choose option: ");
 
@@ -58,17 +59,18 @@ namespace Shopping_Cart
                     case "2": AddToCart(cart, inventory);  break;
                     case "3": cart.ViewCart();             break;
                     case "4": RemoveFromCart(cart);        break;
-                    case "5": ApplyDiscount(discountCodes,
+                    case "5": UpdateQuantityFromCart(cart); break;
+                    case "6": ApplyDiscount(discountCodes,
                                   ref appliedPercent, ref appliedFlat, ref appliedCode);
                               break;
-                    case "6":
+                    case "7":
                         Receipt.Generate(cart, appliedPercent, appliedFlat, appliedCode);
                         cart = new Cart();
                         appliedPercent = 0;
                         appliedFlat = 0;
                         appliedCode = "";
                         break;
-                    case "7":
+                    case "8":
                         Console.WriteLine("Thank you for shopping!");
                         return;
                     default:
@@ -78,6 +80,10 @@ namespace Shopping_Cart
             }
         }
 
+
+
+
+        // 1 → Browse products by category:
         static void BrowseByCategory(List<Product> inventory)
         {
             Console.WriteLine("\nCategories:");
@@ -103,6 +109,9 @@ namespace Shopping_Cart
                 Console.WriteLine($"  ID:{p.Id,-3} {p.Name,-15} Rs.{p.Price:F2}");
         }
 
+
+
+        // 2 → Add product to cart:
         static void AddToCart(Cart cart, List<Product> inventory)
         {
             Console.Write("Enter Product ID: ");
@@ -129,6 +138,10 @@ namespace Shopping_Cart
             cart.AddItem(product, quantity);
         }
 
+
+
+
+        // 4 → Remove item from cart:
         static void RemoveFromCart(Cart cart)
         {
             if (cart.IsEmpty())
@@ -147,6 +160,48 @@ namespace Shopping_Cart
             cart.RemoveItem(productId);
         }
 
+
+
+
+        // 5 → Update item quantity:
+        static void UpdateQuantityFromCart(Cart cart)
+        {
+            if (cart.IsEmpty())
+            {
+                Console.WriteLine("Cart is empty.");
+                return;
+            }
+
+            Console.Write("Enter Product ID to update: ");
+            if (!int.TryParse(Console.ReadLine(), out int productId))
+            {
+                Console.WriteLine("Invalid ID.");
+                return;
+            }
+
+
+            var cartItem = cart.Items.FirstOrDefault(i => i.Product.Id == productId);
+            if (cartItem == null)
+            {
+                Console.WriteLine("Product not found in cart.");
+                return;
+            }
+
+            Console.Write("Enter quantity to Update: ");
+            if (!int.TryParse(Console.ReadLine(), out int u_Quant) || u_Quant < 0 || u_Quant > cartItem.Product.Stock)
+            {
+                Console.WriteLine("Invalid quantity.");
+                return;
+            }
+
+            cart.SetQuantity(productId, u_Quant);
+        }
+
+
+
+
+            
+        // 6 → Apply discount code:
         static void ApplyDiscount(Dictionary<string, double> codes,
             ref double appliedPercent, ref double appliedFlat, ref string appliedCode)
         {

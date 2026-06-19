@@ -84,8 +84,8 @@ namespace Shopping_Cart.src
 
             try
             {
-                File.WriteAllText("receipt.txt", receipt);
-                Console.WriteLine("Receipt saved to receipt.txt");
+                File.WriteAllText($"{DateTime.Now:yyyy-MM-dd HH:mm:ss}.txt", receipt);
+                Console.WriteLine($"Receipt saved to {DateTime.Now:yyyy-MM-dd HH:mm:ss}.txt");
             }
             catch (Exception ex)
             {

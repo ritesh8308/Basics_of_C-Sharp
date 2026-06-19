@@ -13,6 +13,10 @@ Cart.cs (namespace Shopping_Cart.src):
     RemoveItem(int productId)
       → remove item matching that product Id
 
+    Update Quantity:
+      → update quantity of a cartItem that already exists 
+        and remove it from cart if cartItem.Quantity <= 0 
+
     GetSubtotal()
       → LINQ: Items.Sum(i => i.Total)
 
@@ -54,8 +58,6 @@ namespace Shopping_Cart.src
             }
         }
 
-
-
         //RemoveItem() :
         public void RemoveItem(int productId)
         {
@@ -68,6 +70,33 @@ namespace Shopping_Cart.src
             else
             {
                 Console.WriteLine("Item not found in cart.");
+            }
+        }
+
+
+
+        //Set Quantity:
+
+        public void SetQuantity(int productId, int u_Quant)
+        {
+            var existingItem = Items.FirstOrDefault(i => i.Product.Id == productId);
+
+            if(existingItem != null)
+            {
+                existingItem.Quantity = u_Quant;
+
+                if (existingItem.Quantity <= 0)
+                {
+                    RemoveItem(productId);
+                } 
+                else
+                {
+                    Console.WriteLine($"Updated:{existingItem.Product.Name} (now X {existingItem.Quantity})");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Item does not exists in the cart!");
             }
         }
 
